@@ -1,0 +1,58 @@
+version: '3'
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ../:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    working_dir: /var/www
+    networks:
+      - app-network
+
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ../:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./nginx/logs/:/var/log/nginx/
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - app-network
+
+  db:
+    image: mysql:8
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ../:/var/www
+      - ./mysql-data:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    environment:
+      MYSQL_DATABASE: ecommerce
+      MYSQL_ROOT_PASSWORD: HardPassword@4657
+      MYSQL_TCP_PORT: 3306
+      MYSQL_USER: ecommerce
+      MYSQL_PASSWORD: HardPassword@4657
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
