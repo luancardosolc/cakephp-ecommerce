@@ -14,7 +14,7 @@ services:
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     working_dir: /var/www
     networks:
-      - cakephp-ecommerce-network
+      - app-network
 
   webserver:
     image: nginx:alpine
@@ -29,7 +29,7 @@ services:
       - "80:80"
       - "443:443"
     networks:
-      - cakephp-ecommerce-network
+      - app-network
 
   db:
     image: mysql:8
@@ -51,8 +51,8 @@ services:
       MYSQL_USER: ecommerce
       MYSQL_PASSWORD: HardPassword@4657
     networks:
-      - cakephp-ecommerce-network
+      - app-network
 
 networks:
-  cakephp-ecommerce-network:
+  app-network:
     driver: bridge
