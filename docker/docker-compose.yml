@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: app
-    container_name: app
+    container_name: cakephp-ecommerce-app
     restart: unless-stopped
     tty: true
     volumes:
@@ -14,11 +14,11 @@ services:
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     working_dir: /var/www
     networks:
-      - app-network
+      - cakephp-ecommerce-network
 
   webserver:
     image: nginx:alpine
-    container_name: webserver
+    container_name: cakephp-ecommerce-webserver
     restart: unless-stopped
     tty: true
     volumes:
@@ -29,11 +29,11 @@ services:
       - "80:80"
       - "443:443"
     networks:
-      - app-network
+      - cakephp-ecommerce-network
 
   db:
     image: mysql:8
-    container_name: db
+    container_name: cakephp-ecommerce-db
     restart: unless-stopped
     tty: true
     volumes:
@@ -51,8 +51,8 @@ services:
       MYSQL_USER: ecommerce
       MYSQL_PASSWORD: HardPassword@4657
     networks:
-      - app-network
+      - cakephp-ecommerce-network
 
 networks:
-  app-network:
+  cakephp-ecommerce-network:
     driver: bridge
