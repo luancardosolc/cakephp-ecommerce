@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "cakephp/cakephp",
-            "version": "4.4.14",
+            "version": "4.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "bf3d59639b3cd7cf47e811be6d44c0dd6090a057"
+                "reference": "9ff254d6d60720089dec1e10aa1907e24e39a98e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/bf3d59639b3cd7cf47e811be6d44c0dd6090a057",
-                "reference": "bf3d59639b3cd7cf47e811be6d44c0dd6090a057",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/9ff254d6d60720089dec1e10aa1907e24e39a98e",
+                "reference": "9ff254d6d60720089dec1e10aa1907e24e39a98e",
                 "shasum": ""
             },
             "require": {
@@ -71,7 +71,7 @@
             "suggest": {
                 "ext-curl": "To enable more efficient network calls in Http\\Client.",
                 "ext-openssl": "To use Security::encrypt() or have secure CSRF token generation.",
-                "lib-ICU": "The intl PHP library, to use Text::transliterate() or Text::slug()",
+                "lib-ICU": "To use locale-aware features in the I18n and Database packages",
                 "paragonie/csp-builder": "CSP builder, to use the CSP Middleware"
             },
             "type": "library",
@@ -116,20 +116,20 @@
                 "issues": "https://github.com/cakephp/cakephp/issues",
                 "source": "https://github.com/cakephp/cakephp"
             },
-            "time": "2023-05-23T02:49:56+00:00"
+            "time": "2023-08-20T02:36:22+00:00"
         },
         {
             "name": "cakephp/chronos",
-            "version": "2.3.3",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/chronos.git",
-                "reference": "b5d962b7ae615ec5dc053e1d5b57d561fa9a231c"
+                "reference": "9c7e438cba4eed1796ec19ad3874defa9eb9aeac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/chronos/zipball/b5d962b7ae615ec5dc053e1d5b57d561fa9a231c",
-                "reference": "b5d962b7ae615ec5dc053e1d5b57d561fa9a231c",
+                "url": "https://api.github.com/repos/cakephp/chronos/zipball/9c7e438cba4eed1796ec19ad3874defa9eb9aeac",
+                "reference": "9c7e438cba4eed1796ec19ad3874defa9eb9aeac",
                 "shasum": ""
             },
             "require": {
@@ -174,7 +174,7 @@
                 "issues": "https://github.com/cakephp/chronos/issues",
                 "source": "https://github.com/cakephp/chronos"
             },
-            "time": "2023-04-19T15:05:35+00:00"
+            "time": "2023-08-06T22:54:27+00:00"
         },
         {
             "name": "cakephp/migrations",
